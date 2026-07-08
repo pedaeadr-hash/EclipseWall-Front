@@ -1,0 +1,247 @@
+
+
+.fundologin {
+    padding: 20px; /* Um espacinho nas bordas se a tela encolher */
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+    box-sizing: border-box;
+    
+    /* 1. Ativa o Flexbox em modo COLUNA */
+    display: flex;
+    flex-direction: column; 
+    
+    /* 2. Centraliza os cards na horizontal e vertical */
+    justify-content: center; 
+    align-items: center;     
+    
+    /* 3. Cria um espaço de 20px entre um card e outro */
+    gap: 20px; 
+    
+    background-color: rgba(5, 5, 5, 0.87);
+}
+
+/* A imagem de fundo */
+.IMGfundo {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    object-fit: cover;
+    z-index: -1;       
+    filter: brightness(1.0) contrast(1) saturate(1.2); 
+}
+
+/* Estilo do Vidro Fosco Apple (Único e limpo) */
+.fini {font-weight: 100;}
+.fini2 {font-weight: 100;}
+.vidrofosco1{
+    transition: all 0.3s cubic-bezier(0.25, 1, 0.5, 1);
+    gap: 10px;
+    flex-direction: column;
+    display: flex;
+    justify-content: start;
+    width: 500px;
+    min-height: 70%;
+    padding: 30px;
+    border-radius: 18px; 
+    box-sizing: border-box;
+    color: white;
+    align-items: center;
+
+    background-color: rgba(44, 44, 44, 0.171);
+    
+    backdrop-filter: blur(30px) saturate(160%);
+    -webkit-backdrop-filter: blur(30px) saturate(190%);
+    
+    border: 0.5px solid rgba(255, 255, 255, 0.12);
+    box-shadow: 0 12px 20px rgba(0, 0, 0, 0.281);
+   animation: slide-up 1s linear 1 normal;
+   pointer-events: all;
+}
+@keyframes slide-up {
+  from { transform: translateY(800px); opacity: 0.1; }
+  to { transform: translateY(0); opacity: 1; }
+}
+.desativar {
+    opacity: 0;
+    pointer-events: none;
+}
+.logol{
+    font-size: 23px;
+    display: flex;
+    font-weight: 100;
+    justify-content: center;
+}
+.inputel{
+    border: 0.5px rgb(112, 112, 112) solid;
+    color: white;
+    font-size: 15px;
+    background-color: rgba(105, 105, 105, 0.288);
+    height: 35px;
+    width: 90%;
+    border-radius: 4px;
+    
+    padding-left: 10px;
+    padding-right: 10px;
+    outline: none;
+     
+}
+.inputel::placeholder {
+    color: white;
+font-weight: 100;}
+.pp {
+    color: rgb(255, 0, 0);
+    cursor: pointer;
+}
+.pp1 {
+    width: 90%;
+    margin-top: 20px;
+    border: 0.5px rgba(255, 255, 255, 0.712)  solid;
+}
+.lgbtt{
+    background-color: rgba(255, 255, 255, 0.712);
+    font-size: 22px;
+    width: 90%;
+    height: 49px;
+    border-radius: 4px;
+    border: none;
+    color: rgb(0, 0, 0);
+    cursor: pointer;
+}
+.contentwall {
+    background-color: rgba(240, 248, 255, 0);
+    width:90%;
+    height: 140px;
+    border-radius: 7px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: rgba(0, 0, 255, 0);
+    gap: 10px;
+     
+    && div {
+        overflow: hidden;
+        width: 120%;
+        height: 90%;
+        border-radius: 7px;
+        background-color: rgba(255, 255, 255, 0);
+        box-shadow: 0 1px 10px rgba(0, 0, 0, 0.568);
+    }
+
+}
+.vd {
+    
+    width: 100%;
+    height: 100%;
+    filter: brightness(1) contrast(1.0);
+    object-fit: cover;
+}
+.pp2 {
+    width: 90%;
+    margin-top: 10px;
+    border: 0.5px rgba(255, 255, 255, 0.712)  solid;
+}
+
+
+
+.senha {
+    transition: 0.3s ease-in;
+    padding: 40px;
+    pointer-events: none;
+    opacity: 0;
+    position: fixed;
+  width: 550px;
+  height: 51%;
+  background-color: rgba(44, 44, 44, 0.171);
+    
+    backdrop-filter: blur(30px) saturate(160%);
+    -webkit-backdrop-filter: blur(30px) saturate(190%);
+    
+    border: 0.5px solid rgba(255, 255, 255, 0.12);
+    box-shadow: 0 12px 20px rgba(0, 0, 0, 0.5);
+  border-radius: 30px;
+  && svg {
+    width: 20px;
+    cursor: pointer;
+  }
+  && h1 {
+    color: white;
+    margin-top: 10px;
+  }
+  
+}
+.ppp{
+    color: whitesmoke;
+    margin-top: 20px;
+    font-size: 20px;
+
+}
+.active {
+    opacity: 1;
+    pointer-events: all;
+}
+.return {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    color: white;
+}
+.msgerro {
+    color: red;
+}
+
+.senhafil {
+    width: 100%;
+    height: 40px;
+    
+    border-radius: 10px;
+    border: none;
+    outline: 1px white;
+    padding-left: 10px;
+    padding-right: 10px;
+    font-size: 20px;
+}
+.btnsenhaentrar {
+    margin-top: 100px;
+    width: 100%;
+    height: 40px;
+    font-size: 20px;
+    font-weight: 20px;
+    background-color: rgb(255, 0, 0);
+    color: rgb(255, 255, 255);
+    border: none;
+    cursor: pointer;
+    transition: all 0.1s ease;
+    border-radius: 10px;
+}
+.btnsenhaentrar:hover{
+    background-color: rgb(71, 0, 0);
+}
+.senhaeyes {
+    border-radius: 10px;
+    background-color: rgb(255, 255, 255);
+    width: 100%;
+    height: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    && button {
+        display: flex;
+        align-items: center;
+        border-radius: 0px 10px 10px 0px;
+        border: none;
+        height: 40px;
+        width: 30px;
+        cursor: pointer;}
+        background-color: white;
+        
+}
+.eye {
+    transition: all 0.4s ease-in-out;
+    width: 22px; /* Tamanho ajustado da imagem do olho para ser clicável e visível */
+    height: auto;
+    object-fit: contain;
+}
