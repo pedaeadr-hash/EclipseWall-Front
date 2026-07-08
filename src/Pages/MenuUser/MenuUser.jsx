@@ -3,7 +3,7 @@ import '../../Css/Menu.css';
 import '../../Css/loading.css';
 import { useState } from "react";
 import { useNavigate } from 'react-router-dom';
-
+import logo from '../../assets/loginto.png'
 
 
 export default function Menu (){
@@ -70,7 +70,16 @@ export default function Menu (){
             </div>
 
             <div className={`menu ${load ? 'desativar' : ''}`}>
-                <header>{carregarmais}</header>
+                <header>
+                    <img className="logo" src={logo} alt="logo" />
+
+                    <nav>
+                        <div><p>POPULAR</p></div>
+                        <div><p>CATEGORIA</p></div>
+                        <div><p>MENU</p></div>
+                    </nav>
+
+                </header>
                 
                 <div className="box">
                    {listwall.map((wall)=>{
