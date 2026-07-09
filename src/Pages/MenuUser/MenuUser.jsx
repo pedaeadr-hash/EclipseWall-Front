@@ -65,6 +65,7 @@ export default function Menu (){
 
     return (
         <div className="fundomenu">
+            <img className="imgfun" src="https://images.hdqwalls.com/download/days-gone-ps4-4k-r6-2880x1800.jpg" alt="" />
             <div className={`loading ${load ? '' : 'desativar'}`}>
                 <span className="loader"></span>
             </div>
