@@ -72,8 +72,10 @@ export default function Menu (){
 
             <div className={`menu ${load ? 'desativar' : ''}`}>
                 <header>
-                    <img className="logo" src={logo} alt="logo" />
-
+                    <div className="logocontent">
+                    <img className="logo" src={logo} alt="logo" /> 
+                    <p>ECLIPSEWALL</p>
+                    </div>
                     <nav>
                         <div><p>POPULAR</p></div>
                         <div><p>CATEGORIA</p></div>
