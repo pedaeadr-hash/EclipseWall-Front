@@ -7,6 +7,7 @@ import logo from '../../assets/loginto.png'
 
 
 export default function Menu (){
+    const [Popular, setPopular] = useState (0)
     const [carregarmais,setcarregarmais] = useState (1)
     const navi = useNavigate();
     const [limitecarregar,setlc] = useState();
@@ -43,7 +44,7 @@ export default function Menu (){
 
 
         const extrairwall = async()=>{
-            const response= await fetch(`http://localhost:5115/api/WallEndPoints/wall?carregar=${carregarmais}&limit=9`)
+            const response= await fetch(`http://localhost:5115/api/WallEndPoints/wall?carregar=${carregarmais}&limit=9&ordem=${Popular}`)
             if (response.ok){
                 const resposta = await response.json()
                 setlistwall(prevLista => carregarmais === 1 ? resposta.lista : [...prevLista, ...resposta.lista])
@@ -61,7 +62,7 @@ export default function Menu (){
     },[])  
     useEffect(() => {
     extrairwall();
-}, [carregarmais]);  
+}, [carregarmais,Popular]);  
 
     return (
         <div className="fundomenu">
@@ -77,7 +78,7 @@ export default function Menu (){
                     <p>ECLIPSEWALL</p>
                     </div>
                     <nav>
-                        <div><p>POPULAR</p></div>
+                        <div><p onClick={()=>{setlistwall([]);setcarregarmais(1);setPopular(1)}}>POPULAR</p></div>
                         <div><p>CATEGORIA</p></div>
                         <div><p>MENU</p></div>
                     </nav>
