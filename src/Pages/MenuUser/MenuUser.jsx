@@ -7,6 +7,7 @@ import logo from '../../assets/loginto.png'
 
 
 export default function Menu (){
+    const [menu,setmenu] = useState(false)
     const [categoria,setcategoria] = useState(false)
     const [Popular, setPopular] = useState (0)
     const [carregarmais,setcarregarmais] = useState (1)
@@ -74,6 +75,7 @@ export default function Menu (){
 
             <div className={`menu ${load ? 'desativar' : ''}`}>
                 <div className={`categoria ${categoria ? "ativo" : ""}`}></div>
+                <div className={`MenuPerfil ${menu ? "ativoMenu" : ""}`}></div>
                 <header>
                     <div className="logocontent">
                     <img className="logo" src={logo} alt="logo" /> 
@@ -82,7 +84,7 @@ export default function Menu (){
                     <nav>
                         <div><p onClick={()=>{ if (Popular === 1) return; setlistwall([]);setcarregarmais(1);setPopular(1)}}>POPULAR</p></div>
                         <div><p onClick={()=>{ setcategoria(!categoria)}}>CATEGORIA</p></div>
-                        <div><p>MENU</p></div>
+                        <div><p onClick={()=>{setmenu(!menu)}}>MENU</p></div>
                     </nav>
 
                 </header>
