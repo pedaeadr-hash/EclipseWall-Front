@@ -10,7 +10,7 @@ export default function Home (){
 
     const CreatUser = async () => {
         try {
-        const UserCadastro = {Nome:Nome,Email:Email,Senha:Senha,}
+        const UserCadastro = {Name:Nome,Email:Email,Senha:Senha,}
         const response = await fetch ("http://localhost:5115/api/Controll/Create",{
             method:'POST',
             headers: {'Content-Type': 'application/json'},

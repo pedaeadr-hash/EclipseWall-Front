@@ -7,6 +7,7 @@ import logo from '../../assets/loginto.png'
 
 
 export default function Menu (){
+    const [categoria,setcategoria] = useState(false)
     const [Popular, setPopular] = useState (0)
     const [carregarmais,setcarregarmais] = useState (1)
     const navi = useNavigate();
@@ -66,20 +67,21 @@ export default function Menu (){
 
     return (
         <div className="fundomenu">
-            <img className="imgfun" src="https://images.hdqwalls.com/download/days-gone-ps4-4k-r6-2880x1800.jpg" alt="" />
+            <img className="imgfun" src="https://images.hdqwalls.com/download/days-gone4k-01-3840x2400.jpg" alt="" />
             <div className={`loading ${load ? '' : 'desativar'}`}>
                 <span className="loader"></span>
             </div>
 
             <div className={`menu ${load ? 'desativar' : ''}`}>
+                <div className={`categoria ${categoria ? "ativo" : ""}`}></div>
                 <header>
                     <div className="logocontent">
                     <img className="logo" src={logo} alt="logo" /> 
                     <p>ECLIPSEWALL</p>
                     </div>
                     <nav>
-                        <div><p onClick={()=>{setlistwall([]);setcarregarmais(1);setPopular(1)}}>POPULAR</p></div>
-                        <div><p>CATEGORIA</p></div>
+                        <div><p onClick={()=>{ if (Popular === 1) return; setlistwall([]);setcarregarmais(1);setPopular(1)}}>POPULAR</p></div>
+                        <div><p onClick={()=>{ setcategoria(!categoria)}}>CATEGORIA</p></div>
                         <div><p>MENU</p></div>
                     </nav>
 
