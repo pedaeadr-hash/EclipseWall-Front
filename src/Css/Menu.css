@@ -203,3 +203,74 @@ z-index: 1;
     color: red;
 }
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.fotoename {
+    padding: 5px;
+    gap: px;
+    
+    align-items: center;
+    display: flex;
+    width: 100%;
+    height: 100px;
+    background-color: rgba(68, 68, 68, 0.555);
+    border-radius:15px 0px 0px 0px ;
+}
+.fotocircle {
+    overflow: hidden;
+    width: 80px;
+    height: 90%;
+    border-radius: 50%;
+    background-color: rgb(27, 27, 27);
+    && img {
+        object-fit: cover;
+        width: 100%;
+    }
+}
+.nomeuser {
+    margin: 0 auto;
+    color: red;
+    font-size: 20px;
+}
