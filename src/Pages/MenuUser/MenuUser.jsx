@@ -77,7 +77,12 @@ export default function Menu (){
             </div>
 
             <div className={`menu ${load ? 'desativar' : ''}`}>
-                <div className={`categoria ${categoria ? "ativo" : ""}`}></div>
+                <div className={`categoria ${categoria ? "ativo" : ""}`}>
+                    <p>CATEGORIAS</p>
+                    <div className="conteinercaregoria">
+                        <div className="cardcategoria">Gamer</div>
+                    </div>
+                </div>
                 <div className={`MenuPerfil ${menu ? "ativoMenu" : ""}`}>
                     <div className="fotoename"> <div className="fotocircle"><img src="https://i.pinimg.com/736x/d7/b9/48/d7b948ff970f7d92ee265072da06fd07.jpg" alt="" /></div> <p className="nomeuser">{nomez}</p></div>
                 </div>
