@@ -2,6 +2,7 @@ import { use, useEffect } from "react";
 import '../../Css/Menu.css';
 import '../../Css/loading.css';
 import { useState } from "react";
+
 import { useNavigate } from 'react-router-dom';
 import logo from '../../assets/loginto.png'
 
@@ -14,7 +15,8 @@ export default function Menu (){
     const navi = useNavigate();
     const [limitecarregar,setlc] = useState();
     const [listwall,setlistwall] = useState([]);
-    const [emailz,setemailz] = useState ('email undefined');
+    const [nomez,setnomez] = useState ('email undefined');
+    const [emailz,setemailz] = useState ('e-mail undefined');
     const [role,setrole] = useState ('');
     const [load,setload] = useState(true) //ela ja esta ativa
     const verificar = async () => {
@@ -33,6 +35,7 @@ export default function Menu (){
             setload(false)
             setemailz(resposta.email)
             setrole(resposta.role)
+            setnomez(resposta.nome)
         }else {
             localStorage.removeItem('tokenzin')
             navi('/Login');
@@ -76,7 +79,7 @@ export default function Menu (){
             <div className={`menu ${load ? 'desativar' : ''}`}>
                 <div className={`categoria ${categoria ? "ativo" : ""}`}></div>
                 <div className={`MenuPerfil ${menu ? "ativoMenu" : ""}`}>
-                    <div className="fotoename"> <div className="fotocircle"><img src="https://i.pinimg.com/736x/d7/b9/48/d7b948ff970f7d92ee265072da06fd07.jpg" alt="" /></div> <p className="nomeuser">Name User</p></div>
+                    <div className="fotoename"> <div className="fotocircle"><img src="https://i.pinimg.com/736x/d7/b9/48/d7b948ff970f7d92ee265072da06fd07.jpg" alt="" /></div> <p className="nomeuser">{nomez}</p></div>
                 </div>
                 <header>
                     <div className="logocontent">
