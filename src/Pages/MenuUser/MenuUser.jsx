@@ -8,6 +8,7 @@ import logo from '../../assets/loginto.png'
 
 
 export default function Menu (){
+    const [listauniquecategoria,setlistauniquecategoria] = useState([])
     const [menu,setmenu] = useState(false)
     const [categoria,setcategoria] = useState(false)
     const [Popular, setPopular] = useState (0)
@@ -48,6 +49,20 @@ export default function Menu (){
 
 
 
+        const trazeruniqcategory = async()=>{
+            try {
+            const response = await fetch("http://localhost:5115/api/WallEndPoints/categoriasuniq");
+            if (response.ok){
+                const resposta = await response.json();
+                setlistauniquecategoria(resposta)
+
+            }} catch (error){
+                console.log(error)
+            }
+        }
+
+
+
         const extrairwall = async()=>{
             const response= await fetch(`http://localhost:5115/api/WallEndPoints/wall?carregar=${carregarmais}&limit=9&ordem=${Popular}`)
             if (response.ok){
@@ -63,6 +78,7 @@ export default function Menu (){
 
     useEffect(()=>{
         verificar();
+        trazeruniqcategory();
        
     },[])  
     useEffect(() => {
@@ -80,7 +96,13 @@ export default function Menu (){
                 <div className={`categoria ${categoria ? "ativo" : ""}`}>
                     <p>CATEGORIAS</p>
                     <div className="conteinercaregoria">
-                        <div className="cardcategoria">Gamer</div>
+                        {listauniquecategoria.map((listcate)=>{
+                            return(
+                                <div className="cardcategoria" key={listcate}>
+                                    {listcate}
+                                </div>
+                            )
+                        })}
                     </div>
                 </div>
                 <div className={`MenuPerfil ${menu ? "ativoMenu" : ""}`}>
