@@ -8,7 +8,7 @@ import logo from '../../assets/loginto.png'
 
 
 export default function Menu (){
-    const [QueryCategoria, setQueryCategoria ] =useState("")
+    const [QueryCategoria, setQueryCategoria ] =useState("Default")
     const [listauniquecategoria,setlistauniquecategoria] = useState([])
     const [menu,setmenu] = useState(false)
     const [categoria,setcategoria] = useState(false)
@@ -65,7 +65,7 @@ export default function Menu (){
 
 
         const extrairwall = async()=>{
-            const response= await fetch(`http://localhost:5115/api/WallEndPoints/wall?carregar=${carregarmais}&limit=9&ordem=${Popular}`)
+            const response= await fetch(`http://localhost:5115/api/WallEndPoints/wall?carregar=${carregarmais}&limit=9&ordem=${Popular}&PorCategoria=${QueryCategoria}`)
             if (response.ok){
                 const resposta = await response.json()
                 setlistwall(prevLista => carregarmais === 1 ? resposta.lista : [...prevLista, ...resposta.lista])
@@ -84,7 +84,7 @@ export default function Menu (){
     },[])  
     useEffect(() => {
     extrairwall();
-}, [carregarmais,Popular]);  
+}, [carregarmais,Popular,QueryCategoria]);  
 
     return (
         <div className={`fundomenu ${menu ? "no-scroll" : ""}`}>
@@ -100,7 +100,7 @@ export default function Menu (){
                         {listauniquecategoria.map((listcate)=>{
                             return(
                                 <div className="cardcategoria" key={listcate}>
-                                    <p onClick={()=>{setQueryCategoria(listcate)}}>{listcate}</p>
+                                    <p onClick={()=>{setcarregarmais(1);setQueryCategoria(listcate)}}>{listcate}</p>
                                 </div>
                             )
                         })}
