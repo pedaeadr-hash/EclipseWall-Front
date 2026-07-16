@@ -86,7 +86,7 @@ export default function Menu (){
 }, [carregarmais,Popular]);  
 
     return (
-        <div className="fundomenu">
+        <div className={`fundomenu ${menu ? "no-scroll" : ""} ${categoria ? "no-scroll" : ""}`}>
             <img className="imgfun" src="https://images.hdqwalls.com/download/days-gone4k-01-3840x2400.jpg" alt="" />
             <div className={`loading ${load ? '' : 'desativar'}`}>
                 <span className="loader"></span>
