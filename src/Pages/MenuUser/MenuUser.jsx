@@ -8,6 +8,7 @@ import logo from '../../assets/loginto.png'
 
 
 export default function Menu (){
+    const [QueryCategoria, setQueryCategoria ] =useState("")
     const [listauniquecategoria,setlistauniquecategoria] = useState([])
     const [menu,setmenu] = useState(false)
     const [categoria,setcategoria] = useState(false)
@@ -86,7 +87,7 @@ export default function Menu (){
 }, [carregarmais,Popular]);  
 
     return (
-        <div className={`fundomenu ${menu ? "no-scroll" : ""} ${categoria ? "no-scroll" : ""}`}>
+        <div className={`fundomenu ${menu ? "no-scroll" : ""}`}>
             <img className="imgfun" src="https://images.hdqwalls.com/download/days-gone4k-01-3840x2400.jpg" alt="" />
             <div className={`loading ${load ? '' : 'desativar'}`}>
                 <span className="loader"></span>
@@ -99,7 +100,7 @@ export default function Menu (){
                         {listauniquecategoria.map((listcate)=>{
                             return(
                                 <div className="cardcategoria" key={listcate}>
-                                    {listcate}
+                                    <p onClick={()=>{setQueryCategoria(listcate)}}>{listcate}</p>
                                 </div>
                             )
                         })}
