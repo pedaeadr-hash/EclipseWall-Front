@@ -1,11 +1,11 @@
 import '../../Css/Login.css';
 import { useNavigate } from 'react-router-dom';
 import { use, useState } from 'react';
-import wall4 from '../../assets/m4.mp4'
+
 import open from '../../assets/open.png'
 import off from '../../assets/off.png'
 
-import wall5 from '../../assets/m5.mp4'
+
 
 export default function Login (){
     const navi = (useNavigate())
@@ -82,10 +82,10 @@ export default function Login (){
                     <p>Sua primeira vez aqui ? <span className='pp' onClick={()=>{navi('/Cadastro')}}>Criar uma conta</span></p>
                     <span className='pp1'></span>
                     <div className='contentwall'>
-                        <div><video className='vd' src={wall4} autoPlay loop muted disablePictureInPicture /></div>
+                        <div><video className='vd' src="https://res.cloudinary.com/xuxmagdy/video/upload/v1784310715/welcome-to-raccoon-city-resident-evil-requiem-EclipseWall-com_aubzku.mp4" autoPlay loop muted disablePictureInPicture /></div>
                     </div>
                     <div className='contentwall'>
-                        <div><video className='vd' src={wall5} autoPlay loop muted disablePictureInPicture/></div>
+                        <div><video className='vd' src="https://res.cloudinary.com/xuxmagdy/video/upload/v1784311060/hinako-silent-hill-f-EclipseWall-com_qu033u.mp4" autoPlay loop muted disablePictureInPicture/></div>
                     </div>
                     <span className='pp2'></span>
                     
