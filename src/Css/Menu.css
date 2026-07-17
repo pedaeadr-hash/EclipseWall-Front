@@ -356,11 +356,35 @@ z-index: 1;
 
 }
 .blocoup {
+    position: relative;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     width: 900px;
     height: 700px;
     background-color: rgba(5, 5, 5, 0.966);
     backdrop-filter: blur(110px);
     
+}
+.contentclose {
+    width: 100%;
+    height: 40px;
+    background-color: rgba(223, 4, 4, 0);
+    display: flex;
+    align-items: center;
+    justify-content: end;
+    
+    
+}
+.close {
+    width: 40px;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+}
+.close:hover{
+    width: 42px;
+    filter: drop-shadow(0px 0px 7px rgba(255, 255, 255, 0.568));
 }
 .ativoupload {
     opacity: 1;
