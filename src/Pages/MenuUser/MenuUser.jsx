@@ -108,6 +108,7 @@ export default function Menu (){
                 </div>
                 <div className={`MenuPerfil ${menu ? "ativoMenu" : ""}`}>
                     <div className="fotoename"> <div className="fotocircle"><img src="https://i.pinimg.com/736x/d7/b9/48/d7b948ff970f7d92ee265072da06fd07.jpg" alt="" /></div> <p className="nomeuser">{nomez}</p></div>
+                    <div className="upload"><p>Faça Upload</p></div>
                 </div>
                 <header>
                     <div className="logocontent">
