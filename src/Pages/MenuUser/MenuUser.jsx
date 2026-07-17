@@ -11,6 +11,7 @@ export default function Menu (){
     const [QueryCategoria, setQueryCategoria ] =useState("Default")
     const [listauniquecategoria,setlistauniquecategoria] = useState([])
     const [menu,setmenu] = useState(false)
+    const [upload,setupload] = useState(false)
     const [categoria,setcategoria] = useState(false)
     const [Popular, setPopular] = useState (0)
     const [carregarmais,setcarregarmais] = useState (1)
@@ -76,6 +77,26 @@ export default function Menu (){
                 console.log('nada encontrado')
             }
         }
+        const upadmin = async ()=>{
+            try {
+                const Token =  await localStorage.getItem('tokenzin')
+                const response = await fetch("http://localhost:5115/api/WallEndPoints/VERIFY", {
+            method: 'GET', // Deve estar dentro do objeto
+            headers: {
+                "Authorization": `Bearer ${Token}` // O nome correto é 'headers' (plural)
+            }
+        });
+                if (response.ok)(
+                    setupload(true)
+                )
+                else  (
+                    console.log("error")
+                    
+                )
+            }catch(error) {
+                console.log(error)
+            }
+        }
 
     useEffect(()=>{
         verificar();
@@ -94,6 +115,9 @@ export default function Menu (){
             </div>
 
             <div className={`menu ${load ? 'desativar' : ''}`}>
+                <div className={`uploadadmin ${upload ? "ativoupload" : ""}`}>
+                    <div className="blocoup"></div>
+                </div>
                 <div className={`categoria ${categoria ? "ativo" : ""}`}>
                     <p>CATEGORIAS</p>
                     <div className="conteinercaregoria">
@@ -108,7 +132,7 @@ export default function Menu (){
                 </div>
                 <div className={`MenuPerfil ${menu ? "ativoMenu" : ""}`}>
                     <div className="fotoename"> <div className="fotocircle"><img src="https://i.pinimg.com/736x/d7/b9/48/d7b948ff970f7d92ee265072da06fd07.jpg" alt="" /></div> <p className="nomeuser">{nomez}</p></div>
-                    <div className="upload"><p>Faça Upload</p></div>
+                    <div className="upload"><p onClick={()=>upadmin()}>Faça Upload</p></div>
                 </div>
                 <header>
                     <div className="logocontent">
