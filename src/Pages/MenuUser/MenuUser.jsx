@@ -65,7 +65,7 @@ export default function Menu (){
 
 
         const extrairwall = async()=>{
-            const response= await fetch(`http://localhost:5115/api/WallEndPoints/wall?carregar=${carregarmais}&limit=9&ordem=${Popular}&PorCategoria=${QueryCategoria}`)
+            const response= await fetch(`http://localhost:5115/api/WallEndPoints/wall?carregar=${carregarmais}&limit=12&ordem=${Popular}&PorCategoria=${QueryCategoria}`)
             if (response.ok){
                 const resposta = await response.json()
                 setlistwall(prevLista => carregarmais === 1 ? resposta.lista : [...prevLista, ...resposta.lista])
@@ -88,7 +88,7 @@ export default function Menu (){
 
     return (
         <div className={`fundomenu ${menu ? "no-scroll" : ""}`}>
-            <img className="imgfun" src="https://images.hdqwalls.com/download/days-gone4k-01-3840x2400.jpg" alt="" />
+            <img className="imgfun" src="https://images.hdqwalls.com/download/black-hole-abstract-4k-wy-1920x1200.jpg" alt="" />
             <div className={`loading ${load ? '' : 'desativar'}`}>
                 <span className="loader"></span>
             </div>
