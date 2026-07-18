@@ -131,20 +131,21 @@ export default function Menu (){
                 
                     </span>
                     <div className="gird">
-                        <div className="iconsselect"></div>
-                        <div className="iconsselect"></div>
-                        <div className="iconsselect"></div>
-                        <div className="iconsselect"></div>
-                        <div className="iconsselect"></div>
-                        <div className="iconsselect"></div>
-                        <div className="iconsselect"></div>
-                        <div className="iconsselect"></div>
-                        <div className="iconsselect"></div>
-                        <div className="iconsselect"></div>
+                        <div className="iconsselect"><img src="https://i.pinimg.com/1200x/29/dc/83/29dc83410cc93ca8676b36024b0b10d1.jpg" alt="" /></div>
+                        <div className="iconsselect"><img src="https://i.pinimg.com/736x/58/a7/76/58a776f87a2ea378c2189de3d6867e35.jpg" alt="" /></div>
+                        <div className="iconsselect"><img src="https://i.pinimg.com/736x/0f/34/50/0f345020fd30f06446f04ce4190dd5fd.jpg" alt="" /></div>
+                        <div className="iconsselect"><img src="https://i.pinimg.com/736x/f2/09/05/f20905444b575e4f47cd2e1b9d4561ae.jpg" alt="" /></div>
+                        <div className="iconsselect"><img src="https://i.pinimg.com/736x/c6/f1/f2/c6f1f232bb40981feb49e46a89aaa797.jpg" alt="" /></div>
+                        <div className="iconsselect"><img src="https://i.pinimg.com/736x/05/cf/dc/05cfdc2f6a1962875dfd79ed970f267c.jpg" alt="" /></div>
+                        <div className="iconsselect"><img src="https://i.pinimg.com/736x/02/ab/9f/02ab9f7d1b45a323de6aba3474900cb9.jpg" alt="" /></div>
+                        <div className="iconsselect"><img src="https://i.pinimg.com/736x/71/91/88/7191881a4f1c409409e8871201b9333b.jpg" alt="" /></div>
+                        <div className="iconsselect"><img src="https://i.pinimg.com/1200x/4c/7b/9e/4c7b9ed3cc2821f806efb68be096f7b5.jpg" alt="" /></div>
+                        <div className="iconsselect"><img src="https://i.pinimg.com/736x/4f/40/ad/4f40ad521516a8e57b5bd43b1e5efb08.jpg" alt="" /></div>
                         
                         
                         
                     </div>
+                    <div className="salvaricon"><button>Salvar</button></div>
                 </div>
                 <div className={`categoria ${categoria ? "ativo" : ""}`}>
                     <p>CATEGORIAS</p>

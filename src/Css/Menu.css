@@ -335,6 +335,7 @@ z-index: 1;
     display: none;
 }
 .EditIconConteiner {
+    position: relative;
     padding: 10px;
     display: flex;
     flex-direction: column;
@@ -354,25 +355,55 @@ z-index: 1;
     pointer-events: none;
 }
 .gird {
-    margin-top: 10px;
+    position: relative;
+    margin-top: 50px;
     justify-content: center;
     align-items: center;
-    width: auto;
+    width: 80%;
     height: auto;
-    gap: 50px;
+    gap: 30px;
     background-color: rgba(0, 0, 255, 0);
     display: grid;
     
     grid-template-columns: repeat(5, 0.5fr);
 }
 .iconsselect {
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    overflow: hidden;
+    
     width: 100px;
     height: 100px;
     border-radius: 50%;
-    background-color: rgba(255, 0, 0, 0.966);
+    background-color: rgba(255, 0, 0, 0);
+    && img {
+        width: 100%;
+        object-fit: cover;
+    }
+}
+.salvaricon {
+    
+    width: 100%;
+    height: 100%;
+    background-color: rgba(68, 18, 3, 0);
+    display: flex;
+    align-items: end;
+    padding: 10px;
+    justify-content: end;
+    && button {
+        width: 50%;
+        height: 40px;
+        border: none;
+        font-size: 20px;
+        cursor: pointer;
+        transition: all 0.6s ease-in-out;
+        
+
+    }&& button:hover{
+        width: 51%;
+        background-color: rgb(58, 0, 0);
+        color: white;
+        
+    }
+    
 }
 .iconative {
     opacity: 1;
