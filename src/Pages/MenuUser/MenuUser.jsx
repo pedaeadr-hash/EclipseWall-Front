@@ -8,6 +8,7 @@ import logo from '../../assets/loginto.png'
 
 
 export default function Menu (){
+    const[ fotoperfil,setfotoperfil] = useState ("https://i.pinimg.com/736x/d7/b9/48/d7b948ff970f7d92ee265072da06fd07.jpg")
     const [QueryCategoria, setQueryCategoria ] =useState("Default")
     const [listauniquecategoria,setlistauniquecategoria] = useState([])
     const [menu,setmenu] = useState(false)
@@ -145,7 +146,7 @@ export default function Menu (){
                     </div>
                 </div>
                 <div className={`MenuPerfil ${menu ? "ativoMenu" : ""}`}>
-                    <div className="fotoename"> <div className="fotocircle"><p className="editicon" onClick={()=>{setEditIcon(!EditIcon)}}>EDIT</p><img src="https://i.pinimg.com/736x/d7/b9/48/d7b948ff970f7d92ee265072da06fd07.jpg" alt=""/></div> <p className="nomeuser">{nomez}</p></div>
+                    <div className="fotoename"> <div className="fotocircle"><p className="editicon" onClick={()=>{setEditIcon(!EditIcon)}}>EDIT</p><img src={fotoperfil} alt=""/></div> <p className="nomeuser">{nomez}</p></div>
                     <div className="upload" onClick={()=>upadmin()}><p>Faça Upload</p></div>
                 </div>
                 <header>
