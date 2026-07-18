@@ -369,16 +369,27 @@ z-index: 1;
 }
 .iconsselect {
     overflow: hidden;
-    
+    border: 2px solid rgb(252, 252, 252);
     width: 100px;
     height: 100px;
     border-radius: 50%;
+    cursor: pointer;
     background-color: rgba(255, 0, 0, 0);
     && img {
         width: 100%;
         object-fit: cover;
+        
     }
+
 }
+.iconsselect:hover {
+    border-color: #a10000; /* Define a cor verde */
+    /* Se quiser uma transição suave ao mudar a cor: */
+    transition: border-color 0.3s ease-in-out;
+}
+
+
+
 .salvaricon {
     
     width: 100%;
