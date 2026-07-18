@@ -331,7 +331,32 @@ z-index: 1;
     
     position: absolute;
     left: 80px;
+    z-index: 10000;
     display: none;
+}
+.EditIconConteiner {
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    transition: all 0.7s ease-in;
+    box-shadow: rgba(0, 0, 0, 0.712) 0px 10px 20px 20px;
+    position: fixed;
+    width: 0px;
+    height: 500px;
+    background-color: rgba(0, 0, 0, 0.973);
+    top: 50%;
+    border-radius: 10px;
+    left: 60%;
+    z-index: 1000;
+    transform: translate(-50%, -50%);
+    opacity: 0;
+    pointer-events: none;
+}
+.iconative {
+    opacity: 1;
+    pointer-events: all;
+    width: 45%;
 }
 .nomeuser {
     margin: 0 auto;
