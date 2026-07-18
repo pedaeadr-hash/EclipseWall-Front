@@ -310,6 +310,7 @@ z-index: 1;
     border-radius:15px 0px 0px 0px ;
 }
 .fotocircle {
+    
     cursor: pointer;
     overflow: hidden;
     width: 80px;
@@ -320,6 +321,17 @@ z-index: 1;
         object-fit: cover;
         width: 100%;
     }
+}
+.fotocircle:hover .editicon{
+    display: flex;
+    
+}
+.editicon {
+    transition: 1s ease-in-out;
+    
+    position: absolute;
+    left: 80px;
+    display: none;
 }
 .nomeuser {
     margin: 0 auto;
@@ -341,21 +353,23 @@ z-index: 1;
     
 }
 .uploadadmin{
+    top: 3000px;
     display: flex;
     align-items: center;
     justify-content: center;
     z-index: 100;
     position: fixed;
-    width: 100%;
+    width: auto;
     height: 100vh;
-    background-color: rgba(0, 0, 0, 0.856);
+    
     opacity: 0;
     pointer-events: none;
-    left: 2000px;
+    
     
 
 }
 .blocoup {
+    border-radius: 5px;
     position: relative;
     padding: 10px;
     display: flex;
@@ -363,8 +377,8 @@ z-index: 1;
     align-items: center;
     width: 900px;
     height: 700px;
-    background-color: rgba(5, 5, 5, 0.966);
-    backdrop-filter: blur(110px);
+    background-color: rgba(0, 0, 0, 0.973);
+    box-shadow: rgba(0, 0, 0, 0.986) 0px 1px 100px 40px;
     
 }
 .contentclose {
@@ -383,11 +397,28 @@ z-index: 1;
     transition: all 0.3s ease-in-out;
 }
 .close:hover{
-    width: 42px;
+    
     filter: drop-shadow(0px 0px 7px rgba(255, 255, 255, 0.568));
 }
 .ativoupload {
+    top: 0;
     opacity: 1;
     pointer-events: all;
-    left: 0;
+    animation: zoom-in 0.5s ease-in-out forwards;
+   
+}
+
+
+
+
+
+
+@keyframes zoom-in {
+  0% {
+    opacity: 0;
+    transform: scale(0);
+  }
+  100% {
+    opacity: 1;
+  }
 }

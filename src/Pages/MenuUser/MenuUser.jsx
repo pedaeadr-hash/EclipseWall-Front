@@ -133,11 +133,14 @@ export default function Menu (){
                                 </div>
                             )
                         })}
+                        <div className="cardcategoria" >
+                                    <p onClick={()=>{setcarregarmais(1);setQueryCategoria("Default")}}>All</p>
+                                </div>
                     </div>
                 </div>
                 <div className={`MenuPerfil ${menu ? "ativoMenu" : ""}`}>
-                    <div className="fotoename"> <div className="fotocircle"><img src="https://i.pinimg.com/736x/d7/b9/48/d7b948ff970f7d92ee265072da06fd07.jpg" alt="" /></div> <p className="nomeuser">{nomez}</p></div>
-                    <div className="upload"><p onClick={()=>upadmin()}>Faça Upload</p></div>
+                    <div className="fotoename"> <div className="fotocircle"><p className="editicon">editar</p><img src="https://i.pinimg.com/736x/d7/b9/48/d7b948ff970f7d92ee265072da06fd07.jpg" alt=""/></div> <p className="nomeuser">{nomez}</p></div>
+                    <div className="upload" onClick={()=>upadmin()}><p>Faça Upload</p></div>
                 </div>
                 <header>
                     <div className="logocontent">
@@ -145,9 +148,9 @@ export default function Menu (){
                     <p>ECLIPSEWALL</p>
                     </div>
                     <nav>
-                        <div><p onClick={()=>{ if (Popular === 1) return; setlistwall([]);setcarregarmais(1);setPopular(1)}}>POPULAR</p></div>
-                        <div><p onClick={()=>{ setcategoria(!categoria)}}>CATEGORIA</p></div>
-                        <div><p onClick={()=>{setmenu(!menu)}}>MENU</p></div>
+                        <div onClick={()=>{ if (Popular === 1) return; setlistwall([]);setcarregarmais(1);setPopular(1)}}><p>POPULAR</p></div>
+                        <div onClick={()=>{ setcategoria(!categoria)}}><p>CATEGORIA</p></div>
+                        <div onClick={()=>{setmenu(!menu)}}><p>MENU</p></div>
                     </nav>
 
                 </header>
