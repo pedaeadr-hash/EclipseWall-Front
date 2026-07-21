@@ -20,6 +20,7 @@ export default function Menu (){
     const navi = useNavigate();
     const [limitecarregar,setlc] = useState();
     const [listwall,setlistwall] = useState([]);
+    const [idz,setidz] = useState ('id undefined');
     const [nomez,setnomez] = useState ('email undefined');
     const [emailz,setemailz] = useState ('e-mail undefined');
     const [role,setrole] = useState ('');
@@ -41,6 +42,7 @@ export default function Menu (){
             setemailz(resposta.email)
             setrole(resposta.role)
             setnomez(resposta.nome)
+            setidz(resposta.id)
         }else {
             localStorage.removeItem('tokenzin')
             navi('/Login');
