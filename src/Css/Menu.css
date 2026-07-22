@@ -325,7 +325,9 @@ z-index: 1;
     width: 100%;
 }
 .fotocircle:hover .editicon{
-    display: flex;
+    opacity: 1;
+    width: 30px;
+    transition: all 0.8s ease-in-out;
     
 }
 .fotocircle:hover .fotodoperfil{
@@ -336,11 +338,12 @@ z-index: 1;
    
     
     transition: 1s ease-in-out;
-    width:30px;
+    
     position: absolute;
     left: 82px;
     top: 15px;
-    display: none;
+    opacity: 0;
+    width: 0px;
     border: 2px solid white;
     border-radius: 50%;
 }
