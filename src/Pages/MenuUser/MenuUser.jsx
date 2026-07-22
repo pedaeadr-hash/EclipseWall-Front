@@ -2,7 +2,7 @@ import { use, useEffect } from "react";
 import '../../Css/Menu.css';
 import '../../Css/loading.css';
 import { useState } from "react";
-import pen from "../../assets/edit.png"
+import pen from "../../assets/pencil.png"
 import { useNavigate } from 'react-router-dom';
 import logo from '../../assets/loginto.png'
 
@@ -163,7 +163,7 @@ export default function Menu (){
 
     return (
         <div className={`fundomenu ${menu ? "no-scroll" : ""}`}>
-            <img className="imgfun" src="https://images.hdqwalls.com/download/electric-blue-flow-lines-zk-3840x2400.jpg" alt="" />
+            <img className="imgfun" src="https://images.hdqwalls.com/download/days-gone-2019-4k-gs-1920x1080.jpg" alt="" />
             <div className={`loading ${load ? '' : 'desativar'}`}>
                 <span className="loader"></span>
             </div>
@@ -215,7 +215,7 @@ export default function Menu (){
                     </div>
                 </div>
                 <div className={`MenuPerfil ${menu ? "ativoMenu" : ""}`}>
-                    <div className="fotoename"> <div className="fotocircle"><img className="editicon" src={pen} alt="fotoedit" /><img className="fotodoperfil" src={fotoperfil} alt=""/></div> <p className="nomeuser">{nomez}</p></div>
+                    <div className="fotoename"> <div className="fotocircle"><img className="editicon" onClick={()=>{setEditIcon(!EditIcon)}} src={pen} alt="fotoedit" /><img className="fotodoperfil" src={fotoperfil} alt=""/></div> <p className="nomeuser">{nomez}</p></div>
                     <div className="upload" onClick={()=>upadmin()}><p>Faça Upload</p></div>
                 </div>
                 <header>
