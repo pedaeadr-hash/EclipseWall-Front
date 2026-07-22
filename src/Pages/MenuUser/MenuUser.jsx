@@ -25,6 +25,26 @@ export default function Menu (){
     const [emailz,setemailz] = useState ('e-mail undefined');
     const [role,setrole] = useState ('');
     const [load,setload] = useState(true) //ela ja esta ativa
+
+    const effecticon = async ()=>{
+        try {
+            const response = await fetch ("http://localhost:5115/api/Icon/Effects",{
+                method:"POST",
+                headers:{"Content-Type": "application/json"},
+                body: JSON.stringify({Id:idz})
+            });
+            if (response.ok){
+                const resposta = await response.text()
+                setfotoperfil(resposta)
+            } else {
+                console.error("Server returned status:", response.status);
+            }
+        } catch (error){
+            alert(`algo deu errado ${error}`)
+        }
+    }
+
+
     const verificar = async () => {
         try {
         const token = localStorage.getItem("tokenzin")
@@ -128,8 +148,15 @@ export default function Menu (){
     useEffect(()=>{
         verificar();
         trazeruniqcategory();
+
        
     },[])  
+    useEffect(() => {
+    // Only fire if idz has been successfully updated by verificar()
+    if (idz !== 'id undefined') {
+        effecticon();
+    }
+}, [idz]);
     useEffect(() => {
     extrairwall();
 }, [carregarmais,Popular,QueryCategoria]);  
