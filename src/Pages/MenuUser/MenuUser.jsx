@@ -52,6 +52,29 @@ export default function Menu (){
         return
         }
         }
+        const SaveIcon = async ()=>{
+            const objetoform = {
+                UserId:idz,
+                UrlIcon:fotoperfil
+            }
+            try { 
+            const response = await fetch("http://localhost:5115/api/Icon/SaveIcon", {
+                method:"POST",
+                headers:{"Content-Type" : "application/json"},
+                body: JSON.stringify(objetoform)
+            })
+            if (response.ok){
+                alert("tudo ceeto salvo")
+            }
+        } catch {
+            console.log("algodeuerrado")
+        }
+
+        }
+
+        const pegaricon = async ()=>{
+            
+        }
 
 
 
@@ -113,7 +136,7 @@ export default function Menu (){
 
     return (
         <div className={`fundomenu ${menu ? "no-scroll" : ""}`}>
-            <img className="imgfun" src="https://images.hdqwalls.com/download/black-hole-abstract-4k-wy-1920x1200.jpg" alt="" />
+            <img className="imgfun" src="https://images.hdqwalls.com/download/electric-blue-flow-lines-zk-3840x2400.jpg" alt="" />
             <div className={`loading ${load ? '' : 'desativar'}`}>
                 <span className="loader"></span>
             </div>
@@ -147,7 +170,7 @@ export default function Menu (){
                         
                         
                     </div>
-                    <div className="salvaricon"><button>Salvar</button></div>
+                    <div className="salvaricon"><button onClick={()=>{SaveIcon()}}>Salvar</button></div>
                 </div>
                 <div className={`categoria ${categoria ? "ativo" : ""}`}>
                     <p>CATEGORIAS</p>
