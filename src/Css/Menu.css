@@ -157,7 +157,7 @@
 }
 
 .box{padding: 10px;
-    
+    background-color: rgba(0, 0, 0, 0.801);
     border-radius: 10px;
     margin-top: 10px;
     margin-bottom: 60px;
@@ -317,21 +317,24 @@ z-index: 1;
     height: 90%;
     border-radius: 50%;
     background-color: rgb(27, 27, 27);
-    && img {
-        object-fit: cover;
-        width: 100%;
-    }
+    
+}
+.fotodoperfil {
+    object-fit: cover;
+    width: 100%;
 }
 .fotocircle:hover .editicon{
     display: flex;
     
 }
 .editicon {
+   
+    filter: saturate(10) contrast(2);
     transition: 1s ease-in-out;
-    
+    width:30px;
     position: absolute;
-    left: 80px;
-    z-index: 10000;
+    left: 82px;
+    top: 15px;
     display: none;
 }
 .EditIconConteiner {

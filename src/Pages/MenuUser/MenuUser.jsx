@@ -2,7 +2,7 @@ import { use, useEffect } from "react";
 import '../../Css/Menu.css';
 import '../../Css/loading.css';
 import { useState } from "react";
-
+import pen from "../../assets/edit.png"
 import { useNavigate } from 'react-router-dom';
 import logo from '../../assets/loginto.png'
 
@@ -215,7 +215,7 @@ export default function Menu (){
                     </div>
                 </div>
                 <div className={`MenuPerfil ${menu ? "ativoMenu" : ""}`}>
-                    <div className="fotoename"> <div className="fotocircle"><p className="editicon" onClick={()=>{setEditIcon(!EditIcon)}}>EDIT</p><img src={fotoperfil} alt=""/></div> <p className="nomeuser">{nomez}</p></div>
+                    <div className="fotoename"> <div className="fotocircle"><img className="editicon" src={pen} alt="fotoedit" /><img className="fotodoperfil" src={fotoperfil} alt=""/></div> <p className="nomeuser">{nomez}</p></div>
                     <div className="upload" onClick={()=>upadmin()}><p>Faça Upload</p></div>
                 </div>
                 <header>
