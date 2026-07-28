@@ -604,3 +604,17 @@ z-index: 1;
 .ufap {
     margin-top: 5px;
 }
+.visuup {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #a10000;
+    width: 80%;
+    height: 300px;
+    margin: 0 auto;
+    && img{
+        object-fit: cover;
+        width: 100%;
+        height: 100%;
+    }
+}
