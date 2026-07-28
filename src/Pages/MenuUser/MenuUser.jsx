@@ -8,10 +8,11 @@ import logo from '../../assets/loginto.png'
 import verificarzzz from "../../assets/veri.png"
 
 export default function Menu (){
+    const Fallbackimg = "https://i.pinimg.com/736x/56/ec/71/56ec7101edf6a1cfb95758390c65e040.jpg"
     const [mensagemwall,setmensagemwall] = useState("")
     const [ativarmsg,setativarmsg] = useState(false)
     const [nomewall,setnomewall] = useState ('undefined');
-    const [urlwall,seturlwall] = useState ('undefined');
+    const [urlwall,seturlwall] = useState ("undefined");
     const [categoriawall,setcategoriawall] = useState ('undefined');
     const[ fotoperfil,setfotoperfil] = useState ("https://i.pinimg.com/736x/d7/b9/48/d7b948ff970f7d92ee265072da06fd07.jpg")
     const [QueryCategoria, setQueryCategoria ] =useState("Default")
@@ -118,7 +119,7 @@ export default function Menu (){
             }
         }
 
-        const Fallbackimg = "https://i.pinimg.com/736x/56/ec/71/56ec7101edf6a1cfb95758390c65e040.jpg"
+        
 
 
         const extrairwall = async()=>{
@@ -211,7 +212,7 @@ export default function Menu (){
                             <input type="text" placeholder="CATEGORIA" onChange={(e)=>{setcategoriawall(e.target.value)}}/>
                             </div>
                             <p className="ufap">{mensagemwall}</p>
-                            <div className="visuup"><img  src={urlwall} alt="URL INSERIDA" onError={(e) => { e.currentTarget.src = "https://i.pinimg.com/736x/56/ec/71/56ec7101edf6a1cfb95758390c65e040.jpg"}} /></div>
+                            <div className="visuup"><img key={urlwall}  src={!urlwall || urlwall === 'undefined' || urlwall.trim() === '' ? Fallbackimg : urlwall} alt="URL INSERIDA" onError={(e) => { e.currentTarget.src = "https://i.pinimg.com/736x/56/ec/71/56ec7101edf6a1cfb95758390c65e040.jpg"}} /></div>
                             <button className="bbbup" onClick={ ()=>{uploadwall()}}>enviar</button>
                     </div>
                 </div>
