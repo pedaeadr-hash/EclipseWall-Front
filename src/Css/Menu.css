@@ -620,3 +620,17 @@ z-index: 1;
         height: 100%;
     }
 }
+
+.find {
+    color: white;
+    padding-left: 10px;
+    padding-right: 10px;
+    border: none;
+    outline: none;
+    margin-top: 10px;
+    z-index: 100000;
+    width: 30%;
+    height: 40px;
+    border-radius: 5px;
+    background-color: #000000;
+}

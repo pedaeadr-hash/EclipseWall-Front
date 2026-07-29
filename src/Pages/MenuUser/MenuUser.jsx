@@ -276,6 +276,7 @@ export default function Menu (){
                     </nav>
 
                 </header>
+                <input className="find" placeholder="Pesquisar" type="text"/>
                 
                 <div className="box">
                    {listwall.map((wall)=>{
