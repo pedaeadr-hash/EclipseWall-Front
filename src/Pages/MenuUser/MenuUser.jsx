@@ -8,6 +8,7 @@ import logo from '../../assets/loginto.png'
 import verificarzzz from "../../assets/veri.png"
 
 export default function Menu (){
+    const [pesquisa,setpesquisa] = useState("");
     const Fallbackimg = "https://i.pinimg.com/736x/56/ec/71/56ec7101edf6a1cfb95758390c65e040.jpg"
     const [mensagemwall,setmensagemwall] = useState("")
     const [ativarmsg,setativarmsg] = useState(false)
@@ -276,7 +277,7 @@ export default function Menu (){
                     </nav>
 
                 </header>
-                <input className="find" placeholder="Pesquisar" type="text"/>
+                <input onChange={(e) =>{setpesquisa(e.target.value)}} className="find" placeholder="Pesquisar" type="text"/>
                 
                 <div className="box">
                    {listwall.map((wall)=>{
