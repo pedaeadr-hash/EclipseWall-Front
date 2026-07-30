@@ -297,9 +297,10 @@ export default function Menu (){
                     </nav>
 
                 </header>
+                <div className="boxfind">
                 <input onChange={(e) =>{setpesquisa(e.target.value)}} className="find" placeholder="Pesquisar" type="text"/>
-                <div onClick={()=>{Find()}} className="pesqir"></div>
-                
+                <div onClick={()=>{Find()}} className="pesqir"><img src="https://cdn-icons-png.flaticon.com/128/3679/3679976.png" alt="" /></div>
+                </div>
                 <div className="box">
                    {listwall.map((wall)=>{
                     return (
