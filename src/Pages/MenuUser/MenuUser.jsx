@@ -176,6 +176,26 @@ export default function Menu (){
                 console.log(error);
             }
         }
+        const Find = async ()=>{
+            try {
+                if (!pesquisa.trim()) {
+                setcarregarmais(1);
+                extrairwall();
+                return;
+    }
+                const response = await fetch(`http://localhost:5115/api/WallEndPoints/find?pesquisa=${pesquisa}`);
+                if (response.ok){
+                    const resposta = await response.json();
+                    setlistwall(resposta)
+                }
+                else {
+                    alert("deu erro")
+                }
+
+            } catch(error){
+                console.log(error)
+            }
+        }
 
     useEffect(()=>{
         verificar();
@@ -278,6 +298,7 @@ export default function Menu (){
 
                 </header>
                 <input onChange={(e) =>{setpesquisa(e.target.value)}} className="find" placeholder="Pesquisar" type="text"/>
+                <div onClick={()=>{Find()}} className="pesqir"></div>
                 
                 <div className="box">
                    {listwall.map((wall)=>{

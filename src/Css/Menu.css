@@ -634,3 +634,13 @@ z-index: 1;
     border-radius: 5px;
     background-color: #000000;
 }
+
+.pesqir{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 10000;
+    background-color: #a10000;
+    width: 100px;
+    height: 30px;
+}
