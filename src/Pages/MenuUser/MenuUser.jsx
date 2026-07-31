@@ -304,7 +304,7 @@ export default function Menu (){
                 <div className="box">
                    {listwall.map((wall)=>{
                     return (
-                    <div className="cardwall" key={wall.id}>
+                    <div className="cardwall" key={wall.id} onClick={()=>{navi(`/Download/${wall.id}`)}}>
                         <img className="cardimg" src={wall.url} alt="image" />
                         <div className="organiz">
                             <p>{wall.nome}</p>
