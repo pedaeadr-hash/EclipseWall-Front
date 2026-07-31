@@ -1,0 +1,84 @@
+.download {
+    color: aliceblue;
+    width: 100%;
+    min-height: 100vh;
+    box-sizing: border-box;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    background-color: rgba(0, 0, 0, 0.658);
+    padding: 1rem;
+}
+.fundodown {
+    position: fixed;
+    width: 100%;
+    z-index: -1;
+    height: 100%;
+    transform: scale(1.2);
+    filter: blur(16px) brightness(0.3) contrast(1.1) saturate(1.4);
+    
+}
+
+.downloadimg {
+    border-radius: 40px;
+    width: 100%;
+    max-width: 1200px;
+    
+    object-fit: cover;
+    margin-bottom: 10px;
+}
+
+.pforwall {
+    margin-bottom: 10px;
+    text-align: center;
+    max-width: 90%;
+    font-size: 1.2rem;
+}
+
+.contentdown {
+    display: flex;
+    
+    width: 100%;
+    max-width: 900px;
+    justify-content: center;
+    background-color: aquamarine;
+    font-size: 1.1rem;
+}
+
+.contentdown button {
+    width: 140%;
+    cursor: pointer;
+    padding: 0.5rem 1rem;
+    border: none;
+    color: white;
+    background-color: rgb(133, 2, 2);
+    font-size: 1.1rem;
+    
+}
+
+.down {
+    width: 90%;
+    
+    max-width: 400px;
+    padding: 0.5rem 1rem;
+    
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: rgb(243, 243, 243);
+    color: black;
+    
+}
+@media (min-width: 768px) {
+    .contentdown button,
+    .down {
+        max-width: 900px;
+        padding: 0.8rem 1.5rem;
+        font-size: 1.5rem;
+    }
+
+    .pforwall {
+        font-size: 1.5rem;
+    }
+}
