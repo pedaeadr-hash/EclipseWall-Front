@@ -1,6 +1,7 @@
 import '../../Css/Cadastro.css';
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
+import { API_URL } from '../../config';
 
 export default function Home (){
     const [Nome,setNome]=useState('')
