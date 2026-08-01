@@ -47,6 +47,7 @@ export default function Download (){
 
             // 4. Limpa o objeto da memória
             window.URL.revokeObjectURL(blobUrl);
+            Add()
         } catch (error) {
             console.error("Erro ao tentar baixar:", error);
             // Se o servidor da imagem bloquear o fetch por CORS, abre a imagem em uma nova aba
@@ -57,7 +58,16 @@ export default function Download (){
 
 
 
-
+    const Add = async ()=>{
+        try{
+            const response = await fetch(`http://localhost:5115/api/WallEndPoints/contardown?name=${nomewall}`);
+            if (response.ok){
+                console.log("tudo certo downloads atualizado")
+            }
+        } catch (error){
+            alert(error)
+        }
+    }
 
 
 
