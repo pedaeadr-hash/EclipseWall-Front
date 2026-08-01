@@ -1,25 +1,17 @@
 
 
 .fundologin {
-    padding: 20px; /* Um espacinho nas bordas se a tela encolher */
+    padding: 20px;
     position: relative;
-    width: 100vw;
-    height: 100vh;
-    
+    width: 100%;        /* era 100vw */
+    min-height: 100vh;  /* era height: 100% */
     box-sizing: border-box;
-    
-    /* 1. Ativa o Flexbox em modo COLUNA */
     display: flex;
     flex-direction: column; 
-    
-    /* 2. Centraliza os cards na horizontal e vertical */
     justify-content: center; 
     align-items: center;     
-    
-    /* 3. Cria um espaço de 20px entre um card e outro */
     gap: 20px; 
-    
-    background-color: rgba(5, 5, 5, 0.87);
+    background-color: rgba(2, 2, 2, 0.87);
 }
 
 /* A imagem de fundo */
