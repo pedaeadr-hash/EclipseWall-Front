@@ -35,7 +35,7 @@ export default function Menu (){
 
     const effecticon = async ()=>{
         try {
-            const response = await fetch ("http://localhost:5115/api/Icon/Effects",{
+            const response = await fetch (`${API_URL}/api/Icon/Effects`,{
                 method:"POST",
                 headers:{"Content-Type": "application/json"},
                 body: JSON.stringify({Id:idz})
@@ -59,7 +59,7 @@ export default function Menu (){
             navi('/Login')
             return
         }
-        const response = await fetch("http://localhost:5115/api/Controll/verificartt",{
+        const response = await fetch(`${API_URL}/api/Controll/verificartt`,{
             method:'GET',
             headers:{"Authorization": `Bearer ${token}`}
         });
@@ -85,7 +85,7 @@ export default function Menu (){
                 UrlIcon:fotoperfil
             }
             try { 
-            const response = await fetch("http://localhost:5115/api/Icon/SaveIcon", {
+            const response = await fetch(`${API_URL}/api/Icon/SaveIcon`, {
                 method:"POST",
                 headers:{"Content-Type" : "application/json"},
                 body: JSON.stringify(objetoform)
@@ -110,7 +110,7 @@ export default function Menu (){
 
         const trazeruniqcategory = async()=>{
             try {
-            const response = await fetch("http://localhost:5115/api/WallEndPoints/categoriasuniq");
+            const response = await fetch(`${API_URL}/api/WallEndPoints/categoriasuniq`);
             if (response.ok){
                 const resposta = await response.json();
                 setlistauniquecategoria(resposta)
@@ -124,7 +124,7 @@ export default function Menu (){
 
 
         const extrairwall = async()=>{
-            const response= await fetch(`http://localhost:5115/api/WallEndPoints/wall?carregar=${carregarmais}&limit=12&ordem=${Popular}&PorCategoria=${QueryCategoria}`)
+            const response= await fetch(`${API_URL}/api/WallEndPoints/wall?carregar=${carregarmais}&limit=12&ordem=${Popular}&PorCategoria=${QueryCategoria}`)
             if (response.ok){
                 const resposta = await response.json()
                 setlistwall(prevLista => carregarmais === 1 ? resposta.lista : [...prevLista, ...resposta.lista])
@@ -138,7 +138,7 @@ export default function Menu (){
         const upadmin = async ()=>{
             try {
                 const Token =  await localStorage.getItem('tokenzin')
-                const response = await fetch("http://localhost:5115/api/WallEndPoints/VERIFY", {
+                const response = await fetch(`${API_URL}/api/WallEndPoints/VERIFY`, {
             method: 'GET', // Deve estar dentro do objeto
             headers: {
                 "Authorization": `Bearer ${Token}` // O nome correto é 'headers' (plural)
@@ -164,7 +164,7 @@ export default function Menu (){
             return setmensagemwall("Campos vazios");
                 }
 
-                const response = await fetch("http://localhost:5115/api/WallEndPoints/UpWallpaper",{
+                const response = await fetch(`${API_URL}/api/WallEndPoints/UpWallpaper`,{
                     method:"POST",
                     headers:{"Content-Type": "application/json"},
                     body:JSON.stringify({Nome:nomewall,Url:urlwall,categoria:categoriawall})
@@ -183,7 +183,7 @@ export default function Menu (){
                 extrairwall();
                 return;
     }
-                const response = await fetch(`http://localhost:5115/api/WallEndPoints/find?pesquisa=${pesquisa}`);
+                const response = await fetch(`${API_URL}/api/WallEndPoints/find?pesquisa=${pesquisa}`);
                 if (response.ok){
                     const resposta = await response.json();
                     setlistwall(resposta)

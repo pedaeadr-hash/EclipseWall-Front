@@ -11,7 +11,7 @@ export default function Download (){
     const {slug} = useParams()
     const pegarwall = async ()=>{
         try {
-        const response = await fetch(`http://localhost:5115/api/WallEndPoints/downloadslg?slugid=${slug}`)
+        const response = await fetch(`${API_URL}/api/WallEndPoints/downloadslg?slugid=${slug}`)
         if (response.ok){
             const objeto = await response.json();
             setnomewall(objeto.nome)
@@ -61,7 +61,7 @@ export default function Download (){
 
     const Add = async ()=>{
         try{
-            const response = await fetch(`http://localhost:5115/api/WallEndPoints/contardown?name=${nomewall}`);
+            const response = await fetch(`${API_URL}/api/WallEndPoints/contardown?name=${nomewall}`);
             if (response.ok){
                 console.log("tudo certo downloads atualizado")
             }

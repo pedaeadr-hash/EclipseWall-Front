@@ -39,7 +39,7 @@ export default function Login (){
             setmensagelogin('Senha Inválida')
             return
         }
-        const response = await fetch("http://localhost:5115/api/Controll/Login",{
+        const response = await fetch(`${API_URL}/api/Controll/Login`,{
             method:'post',
             headers:{'Content-Type': 'application/json'},
             body: JSON.stringify({Email:email,Senha:senha})
