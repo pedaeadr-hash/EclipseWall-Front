@@ -5,7 +5,7 @@
     position: relative;
     width: 100vw;
     height: 100vh;
-    overflow: hidden;
+    
     box-sizing: border-box;
     
     /* 1. Ativa o Flexbox em modo COLUNA */
@@ -27,8 +27,8 @@
     position: fixed;
     top: 0;
     left: 0;
-    width: 100vw;
-    height: 100vh;
+    width: 100%;
+    height: 100%;
     object-fit: cover;
     z-index: -1;       
     filter: brightness(1.0) contrast(1) saturate(1.2); 
@@ -43,8 +43,8 @@
     flex-direction: column;
     display: flex;
     justify-content: start;
-    width: 500px;
-    min-height: 70%;
+    width:clamp(300px, 80%, 800px);
+    height:clamp(700px,80%, 1300px);
     padding: 30px;
     border-radius: 18px; 
     box-sizing: border-box;
@@ -153,7 +153,7 @@ font-weight: 100;}
     pointer-events: none;
     opacity: 0;
     position: fixed;
-  width: 550px;
+  width: clamp(180px, 90vw, 550px);
   height: 51%;
   background-color: rgba(44, 44, 44, 0.171);
     

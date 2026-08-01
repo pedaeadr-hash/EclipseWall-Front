@@ -1,6 +1,7 @@
 import '../../Css/Cadastro.css';
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
+
 export default function Home (){
     const [Nome,setNome]=useState('')
     const [Email,setEmail]=useState('')
@@ -34,23 +35,26 @@ export default function Home (){
         }
     return (
         <div className='fundocadastro'>
-            <header></header>
-            <section>
+            <div className='painelcd'>
+                <div className='marcacd'>
+                    <span className='wallcd'>WALL</span>
+                    <span className='eclipsecd'>ECLIPSE</span>
+                </div>
+                <h1 className='tituloCd'>Crie sua conta no Eclipse Wall</h1>
+
                 <div className='inputscd'>
                     <input type="text" value={Nome} onChange={(e)=> setNome(e.target.value)} placeholder='Nome'/>
                     <input type="text" value={Email} onChange={(e)=> setEmail(e.target.value)} placeholder='Email'/>
                     <input type="password" value={Senha} onChange={(e)=> setSenha(e.target.value)} placeholder='Senha'/>
-                    <div style={{display:'flex', alignItems:'center', justifyContent: 'start', width:'100%' }}>
-                        <p>{Mensagem}</p>
-                    </div>    
-                    <div className='btnscd'>
-                        <button className='btncd' onClick={CreatUser}>Cadastrar</button>
-                        <button onClick={()=>{navi("/Login")}}>Já tenho login</button>
-                    </div>   
+
+                    {Mensagem && <p className='msgcd'>{Mensagem}</p>}
+
+                    <button className='btncd' onClick={CreatUser}>Cadastrar</button>
+                    <p className='linkcd'>
+                        Já tem uma conta? <span onClick={()=>{navi("/Login")}}>Entrar</span>
+                    </p>
                 </div>
-                
-                
-            </section>
+            </div>
         </div>
     )
 }
