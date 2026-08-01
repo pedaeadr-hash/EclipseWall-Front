@@ -1,6 +1,7 @@
 
 
 .fundologin {
+    overflow: hidden;
     padding: 20px;
     position: relative;
     width: 100%;        /* era 100vw */
