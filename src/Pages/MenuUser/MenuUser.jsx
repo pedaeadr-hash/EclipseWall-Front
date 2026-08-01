@@ -6,7 +6,7 @@ import pen from "../../assets/pencil.png"
 import { useNavigate } from 'react-router-dom';
 import logo from '../../assets/loginto.png'
 import verificarzzz from "../../assets/veri.png"
-import { API_URL } from '../../config';
+import { API_URL } from '../../Config';
 export default function Menu (){
     const [pesquisa,setpesquisa] = useState("");
     const Fallbackimg = "https://i.pinimg.com/736x/56/ec/71/56ec7101edf6a1cfb95758390c65e040.jpg"

@@ -2,7 +2,7 @@ import "../../Css/Download.css"
 import { useEffect } from "react"
 import { useState } from "react"
 import { useParams } from "react-router-dom"
-import { API_URL } from '../../config';
+import { API_URL } from '../../Config';
 export default function Download (){
     const [categoriawall,setctwall]=useState("")
     const [nomewall,setnomewall]=useState("")
