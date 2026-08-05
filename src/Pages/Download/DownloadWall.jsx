@@ -28,12 +28,12 @@ export default function Download (){
     // Função que força o download baixando os dados da imagem primeiro
     const forcarDownload = async () => {
         if (!urlwall) return;
-
+            Add()
         try {
             // 1. Busca os dados binários da imagem
             const response = await fetch(urlwall);
             const blob = await response.blob();
-            Add()
+            
             // 2. Cria um link temporário apontando para a memória local
             const blobUrl = window.URL.createObjectURL(blob);
             
