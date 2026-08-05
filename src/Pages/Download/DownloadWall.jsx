@@ -33,7 +33,7 @@ export default function Download (){
             // 1. Busca os dados binários da imagem
             const response = await fetch(urlwall);
             const blob = await response.blob();
-            
+            Add()
             // 2. Cria um link temporário apontando para a memória local
             const blobUrl = window.URL.createObjectURL(blob);
             
@@ -48,7 +48,7 @@ export default function Download (){
 
             // 4. Limpa o objeto da memória
             window.URL.revokeObjectURL(blobUrl);
-            Add()
+            
         } catch (error) {
             console.error("Erro ao tentar baixar:", error);
             // Se o servidor da imagem bloquear o fetch por CORS, abre a imagem em uma nova aba
